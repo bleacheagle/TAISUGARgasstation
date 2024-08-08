@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嵌入 Google Sheets 并打印</title>
+    <style>
+        #printButton {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #printButton:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        #printButton:active {
+            background-color: #3e8e41;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 嵌入 Google Sheets -->
+    <iframe id="spreadsheetFrame" src="https://docs.google.com/spreadsheets/d/1QYTE-jwVSfZx29yzKEIOW9WZX-TJRD6cO-Ux5klVqiY/edit?rm=minimal" width="100%" height="1000"></iframe>
+
+    <!-- 打印按钮 -->
+    <button id="printButton" onclick="openPrintPage()">列印報表</button>
+
+    <script>
+        function openPrintPage() {
+            var printUrl = "https://docs.google.com/spreadsheets/d/1QYTE-jwVSfZx29yzKEIOW9WZX-TJRD6cO-Ux5klVqiY/export?exportFormat=pdf&format=pdf&size=A4&portrait=false&fitw=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&fzr=true&top_margin=0.5&bottom_margin=0.5&left_margin=0.5&right_margin=0.5";
+            window.open(printUrl, '_blank');
+        }
+    </script>
+
+</body>
+</html>
